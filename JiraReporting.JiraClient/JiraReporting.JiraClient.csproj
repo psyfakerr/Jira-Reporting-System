@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D6CB821-BF8D-4518-B3A7-B4686FAA4FD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JiraReporting.JiraClient</RootNamespace>
+    <AssemblyName>JiraReporting.JiraClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapplo.HttpExtensions, Version=0.8.31.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.HttpExtensions.0.8.31\lib\net46\Dapplo.HttpExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapplo.HttpExtensions.JsonNet, Version=0.8.31.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.HttpExtensions.JsonNet.0.8.31\lib\net46\Dapplo.HttpExtensions.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapplo.HttpExtensions.OAuth, Version=0.8.31.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.HttpExtensions.OAuth.0.8.31\lib\net46\Dapplo.HttpExtensions.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapplo.Log, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Log.1.1.4\lib\net45\Dapplo.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgileExtensions.cs" />
+    <Compile Include="AttachmentExtensions.cs" />
+    <Compile Include="Converters\SvgBitmapHttpContentConverter.cs" />
+    <Compile Include="Converters\SvgConfiguration.cs" />
+    <Compile Include="Domains\IAgileDomain.cs" />
+    <Compile Include="Domains\IAttachmentDomain.cs" />
+    <Compile Include="Domains\IFilterDomain.cs" />
+    <Compile Include="Domains\IGreenhopperDomain.cs" />
+    <Compile Include="Domains\IIssueDomain.cs" />
+    <Compile Include="Domains\IJiraDomain.cs" />
+    <Compile Include="Domains\IProjectDomain.cs" />
+    <Compile Include="Domains\IServerDomain.cs" />
+    <Compile Include="Domains\ISessionDomain.cs" />
+    <Compile Include="Domains\IUserDomain.cs" />
+    <Compile Include="Domains\IWorkDomain.cs" />
+    <Compile Include="Entities\AgileIssue.cs" />
+    <Compile Include="Entities\AgileIssueFields.cs" />
+    <Compile Include="Entities\AllowedValue.cs" />
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\AttachmentContainer.cs" />
+    <Compile Include="Entities\AvatarUrls.cs" />
+    <Compile Include="Entities\BaseId.cs" />
+    <Compile Include="Entities\BaseProperties.cs" />
+    <Compile Include="Entities\Board.cs" />
+    <Compile Include="Entities\BoardConfiguration.cs" />
+    <Compile Include="Entities\Changelog.cs" />
+    <Compile Include="Entities\ChangelogSearchResult.cs" />
+    <Compile Include="Entities\Column.cs" />
+    <Compile Include="Entities\ColumnConfig.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Comments.cs" />
+    <Compile Include="Entities\Component.cs" />
+    <Compile Include="Entities\ComponentDigest.cs" />
+    <Compile Include="Entities\Configuration.cs" />
+    <Compile Include="Entities\Epic.cs" />
+    <Compile Include="Entities\EpicColor.cs" />
+    <Compile Include="Entities\EpicField.cs" />
+    <Compile Include="Entities\Error.cs" />
+    <Compile Include="Entities\EstimationCustomFieldInfo.cs" />
+    <Compile Include="Entities\EstimationFieldInfo.cs" />
+    <Compile Include="Entities\Field.cs" />
+    <Compile Include="Entities\Filter.cs" />
+    <Compile Include="Entities\History.cs" />
+    <Compile Include="Entities\HistoryItem.cs" />
+    <Compile Include="Entities\Issue.cs" />
+    <Compile Include="Entities\IssueBase.cs" />
+    <Compile Include="Entities\IssueFields.cs" />
+    <Compile Include="Entities\IssueType.cs" />
+    <Compile Include="Entities\IssueWithFields.cs" />
+    <Compile Include="Entities\JiraSession.cs" />
+    <Compile Include="Entities\JqlIssueSearch.cs" />
+    <Compile Include="Entities\LoginInfo.cs" />
+    <Compile Include="Entities\Page.cs" />
+    <Compile Include="Entities\PageableResult.cs" />
+    <Compile Include="Entities\PossibleField.cs" />
+    <Compile Include="Entities\Priority.cs" />
+    <Compile Include="Entities\ProgressInfo.cs" />
+    <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\ProjectCategory.cs" />
+    <Compile Include="Entities\ProjectDigest.cs" />
+    <Compile Include="Entities\RankingCustomFieldInfo.cs" />
+    <Compile Include="Entities\RemoteLinks.cs" />
+    <Compile Include="Entities\ReportIssue.cs" />
+    <Compile Include="Entities\Resolution.cs" />
+    <Compile Include="Entities\Schema.cs" />
+    <Compile Include="Entities\SearchIssuesResult.cs" />
+    <Compile Include="Entities\SearchResult.cs" />
+    <Compile Include="Entities\ServerInfo.cs" />
+    <Compile Include="Entities\SessionResponse.cs" />
+    <Compile Include="Entities\SharePermission.cs" />
+    <Compile Include="Entities\Sprint.cs" />
+    <Compile Include="Entities\SprintInReport.cs" />
+    <Compile Include="Entities\SprintReport.cs" />
+    <Compile Include="Entities\SprintReportContents.cs" />
+    <Compile Include="Entities\StatisticField.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\StatusCategory.cs" />
+    <Compile Include="Entities\Subscription.cs" />
+    <Compile Include="Entities\Subscriptions.cs" />
+    <Compile Include="Entities\TimeTracking.cs" />
+    <Compile Include="Entities\TimeTrackingConfiguration.cs" />
+    <Compile Include="Entities\Transition.cs" />
+    <Compile Include="Entities\Transitions.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\ValueField.cs" />
+    <Compile Include="Entities\Version.cs" />
+    <Compile Include="Entities\Visibility.cs" />
+    <Compile Include="Entities\VoteInfo.cs" />
+    <Compile Include="Entities\Watches.cs" />
+    <Compile Include="Entities\Worklog.cs" />
+    <Compile Include="Entities\Worklogs.cs" />
+    <Compile Include="Enums\AdjustEstimate.cs" />
+    <Compile Include="Enums\AvatarSizes.cs" />
+    <Compile Include="Enums\BoardTypes.cs" />
+    <Compile Include="FilterExtensions.cs" />
+    <Compile Include="GreenhopperExtensions.cs" />
+    <Compile Include="IJiraClient.cs" />
+    <Compile Include="Internal\HttpResponseExtensions.cs" />
+    <Compile Include="IssueExtensions.cs" />
+    <Compile Include="JiraClient.cs" />
+    <Compile Include="JiraConfig.cs" />
+    <Compile Include="JiraException.cs" />
+    <Compile Include="JiraOAuthSettings.cs" />
+    <Compile Include="Json\CustomDateTimeOffsetConverter.cs" />
+    <Compile Include="ProjectExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\Clause.cs" />
+    <Compile Include="Query\DatetimeClause.cs" />
+    <Compile Include="Query\Fields.cs" />
+    <Compile Include="Query\IDatetimeClause.cs" />
+    <Compile Include="Query\IDatetimeClauseWithoutValue.cs" />
+    <Compile Include="Query\IFinalClause.cs" />
+    <Compile Include="Query\IIssueClause.cs" />
+    <Compile Include="Query\IProjectClause.cs" />
+    <Compile Include="Query\ISimpleValueClause.cs" />
+    <Compile Include="Query\IssueClause.cs" />
+    <Compile Include="Query\IStatusClause.cs" />
+    <Compile Include="Query\ITextClause.cs" />
+    <Compile Include="Query\ITypeClause.cs" />
+    <Compile Include="Query\IUserClause.cs" />
+    <Compile Include="Query\IVersionClause.cs" />
+    <Compile Include="Query\Operators.cs" />
+    <Compile Include="Query\ProjectClause.cs" />
+    <Compile Include="Query\SimpleValueClause.cs" />
+    <Compile Include="Query\StatusClause.cs" />
+    <Compile Include="Query\TextClause.cs" />
+    <Compile Include="Query\TypeClause.cs" />
+    <Compile Include="Query\UserClause.cs" />
+    <Compile Include="Query\VersionClause.cs" />
+    <Compile Include="Query\Where.cs" />
+    <Compile Include="ServerExtensions.cs" />
+    <Compile Include="SessionExtensions.cs" />
+    <Compile Include="TimeSpanExtensions.cs" />
+    <Compile Include="UserExtensions.cs" />
+    <Compile Include="WorkExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
